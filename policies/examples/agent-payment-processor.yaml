@@ -1,0 +1,23 @@
+version: "1.0.0"
+policies:
+  - id: "agent-allow-small-payments"
+    description: "Allow payments under $1000"
+    level: "agent"
+    action: "payment.transfer"
+    subject: "*"
+    resource: "*"
+    effect: "allow"
+    match:
+      amount_max: 999
+    priority: 10
+      
+  - id: "agent-deny-large-payments"
+    description: "Deny payments $1000 or more"
+    level: "agent"
+    action: "payment.transfer"
+    subject: "*"
+    resource: "*"
+    effect: "deny"
+    match:
+      amount_min: 1000
+    priority: 10

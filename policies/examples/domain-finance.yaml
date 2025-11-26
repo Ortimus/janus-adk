@@ -1,0 +1,12 @@
+version: "1.0.0"
+policies:
+  - id: "domain-finance-team-limit"
+    description: "Finance team members have higher approval thresholds"
+    level: "domain"
+    action: "payment.transfer"
+    subject: "finance-*"
+    resource: "*"
+    effect: "require_approval"
+    match:
+      amount_min: 10000
+    priority: 20

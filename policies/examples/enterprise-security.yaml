@@ -1,0 +1,12 @@
+version: "1.0.0"
+policies:
+  - id: "enterprise-pii-protection"
+    description: "Block PII data exports"
+    level: "enterprise"
+    action: "data.export"
+    subject: "*"
+    resource: "external"
+    effect: "deny"
+    match:
+      data_classification: "pii"
+    priority: 1

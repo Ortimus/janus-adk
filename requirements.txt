@@ -1,0 +1,47 @@
+# Janus - Hierarchical Policy Management System Requirements
+
+# Python env
+python-dotenv>=1.0
+jsonschema>=4.0
+
+# Caching 
+tinydb>=4.7
+
+
+# Google Cloud & AI
+google-cloud-aiplatform>=1.38.0
+google-generativeai>=0.3.0
+google-genai>=0.10.0
+vertexai>=1.38.0
+
+# ADK (when available, adjust version as needed)
+# google-agent-development-kit>=0.1.0
+
+# Data Models & Validation
+pyyaml>=6.0
+pydantic>=2.7,<3.0
+pydantic-settings>=2.3,<3.0
+
+#pydantic>=2.0.0
+#pydantic-settings>=2.0.0
+
+# Async Support
+asyncio>=3.4.3
+aiohttp>=3.9.0
+
+# Rich Console Output
+rich>=13.0.0
+
+# Logging & Monitoring
+structlog>=23.2.0
+
+# Testing (optional, for development)
+pytest>=7.4.0
+pytest-asyncio>=0.21.0
+pytest-cov>=4.1.0
+
+# Development Tools (optional)
+black>=23.0.0
+mypy>=1.0.0
+pylint>=3.0.0
+

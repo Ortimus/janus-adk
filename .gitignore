@@ -1,0 +1,48 @@
+# Byte-compiled / optimized / compiled files
+__pycache__/
+*.pyc
+*.pyd
+*.pyo
+
+# Virtual environment
+jagenv/
+.jagenv/
+venv/
+./venv
+
+# Backup folders
+backup_policies/
+
+
+# Editor/IDE files
+.vscode/
+.idea/
+*.swp
+*~
+.DS_Store
+
+# Logs and temporary files
+*.log
+tmp/
+temp/
+
+# Data files
+# You may want to be more specific here depending on your project
+# For example, if you have large datasets, you might ignore a 'data/' directory
+# or specific file types like .csv, .h5, .pkl, etc.
+# data/
+# *.csv
+# *.h5
+# *.pkl
+
+# AI/ML specific files
+# Models, checkpoints, and other large generated files
+# You may need to customize these based on your specific framework (TensorFlow, PyTorch, etc.)
+# For example:
+# saved_models/
+# checkpoints/
+# *.pt
+# *.onnx
+
+# Environment variables
+.env
