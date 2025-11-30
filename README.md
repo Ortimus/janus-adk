@@ -6,12 +6,14 @@ This project demonstrates how to integrate **policy-based action validation** in
 
 It is intended to evolve into a clean, enterprise-ready baseline for future expansion, including centralized policy services, distributed enforcement points, SOC logging pipelines, or governance reporting.
 
+NOTE: This is a submssion for the [Kaggle Agents Intensive Capstone project](https://www.kaggle.com/competitions/agents-intensive-capstone-project/overview). 
+
 
 ## 🎯 Features
 
 ### Core Policy System
 - ✅ Hierarchical policy enforcement (Enterprise > Domain > Agent)
-- ✅ Pattern matching (finance-* agents)
+- ✅ Pattern matching (e.g. finance-*)
 - ✅ Amount-based conditions
 - ✅ YAML policy configuration
 
@@ -35,11 +37,11 @@ janus-adk/
 │   ├── core/              # Core policy system
 │   ├── adapters/          # ADK adapter
 │   ├── integrations/      # Gemini client
-│   └── agent.py          # Main agent
+│   └── agent.py           # Main agent
 ├── policies/
 │   └── examples/          # YAML policies
 └── examples/
-    └── adk_demo/            # Gemini/ADK demo
+    └── adk_demo/          # Gemini/ADK demo
 ```
 
 ## 🔧 Configuration
@@ -129,23 +131,13 @@ Get your API key from: https://makersuite.google.com/app/apikey
 
 ```bash
 # Gemini integration demo
-python examples/adk_demo/gemini_demo.py
-```
-
-## 🧪 Testing
-
-```bash
-
-# Run with Gemini
-export GOOGLE_API_KEY='your-key'
-python examples/adk_demo/gemini_demo.py
+python examples/adk_demo/main_demo.py
 ```
 
 ## 📖 Documentation
 
 - [Google Gemini API](https://ai.google.dev/docs)
 - [Google ADK](https://cloud.google.com/agent-development-kit)
-- [Policy Configuration](./docs/policies.md)
 
 ## 🎓 Capstone Project
 
