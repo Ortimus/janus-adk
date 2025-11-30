@@ -6,7 +6,7 @@ This project demonstrates how to integrate **policy-based action validation** in
 
 It is intended to evolve into a clean, enterprise-ready baseline for future expansion, including centralized policy services, distributed enforcement points, SOC logging pipelines, or governance reporting.
 
-NOTE: This is a submssion for the [Kaggle Agents Intensive Capstone project](https://www.kaggle.com/competitions/agents-intensive-capstone-project/overview). 
+NOTE: This is a [submssion](kaggle.com/competitions/agents-intensive-capstone-project/writeups/hierarchical-policy-architecture) for the [Kaggle Agents Intensive Capstone project](https://www.kaggle.com/competitions/agents-intensive-capstone-project/overview). 
 
 
 ## 🎯 Features
@@ -56,11 +56,16 @@ janus-adk/
 
 ```yaml
 policies:
-  - id: "allow-small-payments"
+  - id: "agent-allow-small-payments"
+    description: "Allow payments under $1000"
+    level: "agent"
     action: "payment.transfer"
+    subject: "*"
+    resource: "*"
     effect: "allow"
     match:
       amount_max: 999
+    priority: 10
 ```
 
 ## 🤖 Using with Gemini
