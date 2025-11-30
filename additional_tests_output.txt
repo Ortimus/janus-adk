@@ -1,0 +1,250 @@
+INFO:janus_agent.core.policy_repository:Loaded 1 policies from domain-finance.yaml
+INFO:janus_agent.core.policy_repository:Loaded 1 policies from enterprise-security.yaml
+INFO:janus_agent.core.policy_repository:Loaded 2 policies from agent-payment-processor.yaml
+INFO:janus_agent.core.policy_repository:Loaded 4 policies from policies/examples
+INFO:janus_agent.core.policy_repository:Loaded 1 policies from domain-finance.yaml
+INFO:janus_agent.core.policy_repository:Loaded 1 policies from enterprise-security.yaml
+INFO:janus_agent.core.policy_repository:Loaded 2 policies from agent-payment-processor.yaml
+INFO:janus_agent.core.policy_repository:Loaded 4 policies from policies/examples
+
+██████████████████████████████████████████████████████████████████████
+█                                                                    █
+█                       JANUS ADDITIONAL DEMO TESTS                  █
+█                  Enterprise & Domain Policy Scenarios              █
+█                                                                    █
+██████████████████████████████████████████████████████████████████████
+
+======================================================================
+ ENTERPRISE POLICY TEST: PII Data Protection
+======================================================================
+
+    Policy Under Test:
+    ┌─────────────────────────────────────────────────────────────────┐
+    │  enterprise-pii-protection (Level: ENTERPRISE, Priority: 1)    │
+    │  Action: data.export | Resource: external | Effect: DENY       │
+    │  Condition: data_classification = "pii"                        │
+    └─────────────────────────────────────────────────────────────────┘
+    
+Scenario: Various agents attempting to export data externally
+
+----------------------------------------------------------------------
+Test: Export PII to external API
+  Agent: data-export-agent
+  Action: data.export → external
+  Data Classification: pii
+
+  Policy Evaluation Chain:
+    [DOMAIN    ] domain-finance-team-limit      → ○ not applicable
+    [ENTERPRISE] enterprise-pii-protection      → ✓ MATCHED
+    [AGENT     ] agent-allow-small-payments     → ○ not applicable
+    [AGENT     ] agent-deny-large-payments      → ○ not applicable
+
+  ✅ Decision: DENY (policy: enterprise-pii-protection)
+  Reason: Enterprise policy blocks ALL PII exports
+----------------------------------------------------------------------
+Test: Finance agent export PII
+  Agent: finance-agent-1
+  Action: data.export → external
+  Data Classification: pii
+
+  Policy Evaluation Chain:
+    [DOMAIN    ] domain-finance-team-limit      → ○ not applicable
+    [ENTERPRISE] enterprise-pii-protection      → ✓ MATCHED
+    [AGENT     ] agent-allow-small-payments     → ○ not applicable
+    [AGENT     ] agent-deny-large-payments      → ○ not applicable
+
+  ✅ Decision: DENY (policy: enterprise-pii-protection)
+  Reason: Even privileged finance agents cannot export PII
+----------------------------------------------------------------------
+Test: Export non-PII data externally
+  Agent: data-export-agent
+  Action: data.export → external
+  Data Classification: public
+
+  Policy Evaluation Chain:
+    [DOMAIN    ] domain-finance-team-limit      → ○ not applicable
+    [ENTERPRISE] enterprise-pii-protection      → ✓ MATCHED
+    [AGENT     ] agent-allow-small-payments     → ○ not applicable
+    [AGENT     ] agent-deny-large-payments      → ○ not applicable
+
+  ✅ Decision: DENY (policy: enterprise-pii-protection)
+  Reason: No explicit allow policy, defaults to deny
+----------------------------------------------------------------------
+Test: Export PII internally (not external)
+  Agent: analytics-agent
+  Action: data.export → internal-warehouse
+  Data Classification: pii
+
+  Policy Evaluation Chain:
+    [DOMAIN    ] domain-finance-team-limit      → ○ not applicable
+    [ENTERPRISE] enterprise-pii-protection      → ○ not applicable
+    [AGENT     ] agent-allow-small-payments     → ○ not applicable
+    [AGENT     ] agent-deny-large-payments      → ○ not applicable
+
+  ✅ Decision: DENY (policy: default-deny)
+  Reason: Policy targets 'external' resource, but no allow exists
+----------------------------------------------------------------------
+
+📊 Enterprise PII Tests: 4/4 passed
+
+    ╔═══════════════════════════════════════════════════════════════════╗
+    ║  KEY INSIGHT: Enterprise policies enforce organization-wide       ║
+    ║  security rules that NO agent can bypass, regardless of their     ║
+    ║  domain permissions or agent-level allowances.                    ║
+    ╚═══════════════════════════════════════════════════════════════════╝
+    
+
+======================================================================
+ DOMAIN POLICY TEST: Finance Team Approval Workflow
+======================================================================
+
+    Policy Under Test:
+    ┌─────────────────────────────────────────────────────────────────┐
+    │  domain-finance-team-limit (Level: DOMAIN, Priority: 20)       │
+    │  Action: payment.transfer | Subject: finance-*                 │
+    │  Effect: REQUIRE_APPROVAL | Condition: amount >= $10,000       │
+    └─────────────────────────────────────────────────────────────────┘
+    
+    Challenge: Agent-level policy denies ALL payments >= $1,000
+    This test shows how policy hierarchy SHOULD work vs current behavior.
+    
+Scenario: Comparing regular vs finance agents on large transfers
+
+----------------------------------------------------------------------
+Test: Regular agent - $15,000 transfer
+  Agent: payment-agent-1
+  Amount: $15,000
+  Context: Standard payment agent attempting large transfer
+
+  Policy Evaluation (by hierarchy level):
+    [ENTERPRISE] enterprise-pii-protection           → ○ not applicable
+    [DOMAIN    ] domain-finance-team-limit           → ○ not applicable
+    [AGENT     ] agent-allow-small-payments          → ○ not applicable
+    [AGENT     ] agent-deny-large-payments           → ✓ DENY
+
+  ❌ Final Decision: DENY
+     Winning Policy: agent-deny-large-payments
+----------------------------------------------------------------------
+Test: Finance agent - $15,000 transfer
+  Agent: finance-agent-1
+  Amount: $15,000
+  Context: Finance team member with elevated permissions
+
+  Policy Evaluation (by hierarchy level):
+    [ENTERPRISE] enterprise-pii-protection           → ○ not applicable
+    [DOMAIN    ] domain-finance-team-limit           → ✓ REQUIRE_APPROVAL
+    [AGENT     ] agent-allow-small-payments          → ○ not applicable
+    [AGENT     ] agent-deny-large-payments           → ○ not applicable
+
+  ⚠️ Final Decision: REQUIRE_APPROVAL
+     Winning Policy: domain-finance-team-limit
+----------------------------------------------------------------------
+Test: Finance agent - $5,000 transfer
+  Agent: finance-agent-1
+  Amount: $5,000
+  Context: Finance agent below domain threshold
+
+  Policy Evaluation (by hierarchy level):
+    [ENTERPRISE] enterprise-pii-protection           → ○ not applicable
+    [DOMAIN    ] domain-finance-team-limit           → ○ not applicable
+    [AGENT     ] agent-allow-small-payments          → ○ not applicable
+    [AGENT     ] agent-deny-large-payments           → ○ not applicable
+
+  ❌ Final Decision: DENY
+     Winning Policy: default-deny
+----------------------------------------------------------------------
+Test: Finance manager - $50,000 transfer
+  Agent: finance-manager-1
+  Amount: $50,000
+  Context: Finance manager with large transaction
+
+  Policy Evaluation (by hierarchy level):
+    [ENTERPRISE] enterprise-pii-protection           → ○ not applicable
+    [DOMAIN    ] domain-finance-team-limit           → ✓ REQUIRE_APPROVAL
+    [AGENT     ] agent-allow-small-payments          → ○ not applicable
+    [AGENT     ] agent-deny-large-payments           → ○ not applicable
+
+  ⚠️ Final Decision: REQUIRE_APPROVAL
+     Winning Policy: domain-finance-team-limit
+----------------------------------------------------------------------
+
+    ╔═══════════════════════════════════════════════════════════════════╗
+    ║  ANALYSIS: Current PDP Behavior                                   ║
+    ╠═══════════════════════════════════════════════════════════════════╣
+    ║  The agent-level deny (amount >= $1000) currently catches all     ║
+    ║  large payments before the domain require_approval can trigger.   ║
+    ║                                                                   ║
+    ║  This demonstrates an important design consideration:             ║
+    ║  Effect precedence (deny > require_approval > allow) applies      ║
+    ║  ACROSS all matching policies, not per-level.                     ║
+    ║                                                                   ║
+    ║  To enable domain override, you could:                            ║
+    ║  1. Modify agent policy: subject="payment-*" (exclude finance)    ║
+    ║  2. Adjust PDP: Apply effect precedence within each level first   ║
+    ║  3. Use priority: Give domain policies lower (stronger) priority  ║
+    ╚═══════════════════════════════════════════════════════════════════╝
+    
+
+======================================================================
+ HIERARCHY OVERRIDE DEMO: Domain Overrides Agent
+======================================================================
+
+    To properly demonstrate domain-level override, we simulate
+    a policy configuration where:
+    
+    - Agent policy: Deny payments >= $1000 for "payment-*" agents only
+    - Domain policy: Require approval for "finance-*" agents >= $10,000
+    
+    This allows finance agents to process mid-range payments ($1000-$9999)
+    that regular payment agents cannot.
+    
+
+Modified Policy Configuration:
+┌─────────────────────────────────────────────────────────────────┐
+│ agent-deny-large: subject='payment-*' (excludes finance-*)     │
+│ domain-finance-elevated: allows finance-* up to $9,999         │
+│ domain-finance-approval: requires approval for finance-* >=$10k│
+└─────────────────────────────────────────────────────────────────┘
+
+----------------------------------------------------------------------
+
+Agent                         Amount Decision             Policy                        
+=====================================================================================
+payment-agent-1           $   5,000 ❌ deny              agent-deny-large              
+finance-agent-1           $   5,000 ✅ allow             domain-finance-elevated       
+finance-agent-1           $  15,000 ⚠️ require_approval  domain-finance-approval       
+finance-manager-1         $     500 ✅ allow             domain-finance-elevated       
+
+=====================================================================================
+
+    ╔═══════════════════════════════════════════════════════════════════╗
+    ║  RESULT: With scoped agent policies, the hierarchy works:         ║
+    ║                                                                   ║
+    ║  • payment-agent-1 @ $5,000  → DENY (agent-deny-large)           ║
+    ║  • finance-agent-1 @ $5,000  → ALLOW (domain-finance-elevated)   ║
+    ║  • finance-agent-1 @ $15,000 → REQUIRE_APPROVAL (domain policy)  ║
+    ║                                                                   ║
+    ║  Finance team gets elevated permissions via domain-level policy!  ║
+    ╚═══════════════════════════════════════════════════════════════════╝
+    
+
+======================================================================
+ DEMO COMPLETE
+======================================================================
+
+    Summary of Policy Hierarchy Demonstration:
+    
+    1. ENTERPRISE LEVEL (Highest Priority)
+       └─ PII protection blocks ALL external data exports
+       └─ No agent or domain can override this
+    
+    2. DOMAIN LEVEL (Department Rules)  
+       └─ Can grant elevated permissions to specific agent groups
+       └─ Example: finance-* agents get higher transaction limits
+    
+    3. AGENT LEVEL (Service Rules)
+       └─ Default operational constraints
+       └─ Can be overridden by higher-level policies
+    
+    This demonstrates defense-in-depth with flexible policy management!
+    

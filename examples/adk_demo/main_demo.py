@@ -178,7 +178,7 @@ async def test_gemini_integration():
     
     # Create agent with Gemini
     agent = JanusAgent(
-        "gemini-financial-assistant",
+        "payment-financial-assistant",
         "AI Financial Assistant powered by Gemini"
     )
     

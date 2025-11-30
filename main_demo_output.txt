@@ -1,0 +1,432 @@
+INFO:janus_agent.core.policy_repository:Loaded 1 policies from domain-finance.yaml
+INFO:janus_agent.core.policy_repository:Loaded 1 policies from enterprise-security.yaml
+INFO:janus_agent.core.policy_repository:Loaded 2 policies from agent-payment-processor.yaml
+INFO:janus_agent.core.policy_repository:Loaded 4 policies from policies/examples
+INFO:janus_agent.adapters.adk_adapter:Initialized ADK Agent: payment-financial-assistant
+INFO:janus_agent.adapters.adk_adapter:Available tools: ['process_payment', 'check_balance', 'check_policy']
+INFO:janus_agent.adapters.adk_adapter:Extracted intent: {'action': 'payment.transfer', 'parameters': {'amount': 50.0, 'recipient': 'office supplies', 'type': 'payment'}, 'confidence': 0.98}
+INFO:janus_agent.adapters.adk_adapter:Policy decision: allow (policy: agent-allow-small-payments) -- action=payment.transfer, amount=50.0, recipient=office supplies -- agent=payment-financial-assistant
+INFO:janus_agent.adapters.adk_adapter:Matched policy reasoning:
+INFO:janus_agent.adapters.adk_adapter: - domain-finance-team-limit (level=domain, priority=20, effect=require_approval) -> result=not_applicable
+INFO:janus_agent.adapters.adk_adapter: - enterprise-pii-protection (level=enterprise, priority=1, effect=deny) -> result=not_applicable
+INFO:janus_agent.adapters.adk_adapter: - agent-allow-small-payments (level=agent, priority=10, effect=allow) -> result=allow
+INFO:janus_agent.adapters.adk_adapter: - agent-deny-large-payments (level=agent, priority=10, effect=deny) -> result=not_applicable
+INFO:janus_agent.adapters.adk_adapter:
+INFO:janus_agent.adapters.adk_adapter:Policy decision: allow (policy: agent-allow-small-payments) -- action=payment.transfer, amount=50.0, recipient=office supplies -- agent=payment-financial-assistant
+INFO:janus_agent.adapters.adk_adapter:Matched policy reasoning:
+INFO:janus_agent.adapters.adk_adapter: - domain-finance-team-limit (level=domain, priority=20, effect=require_approval) -> result=not_applicable
+INFO:janus_agent.adapters.adk_adapter: - enterprise-pii-protection (level=enterprise, priority=1, effect=deny) -> result=not_applicable
+INFO:janus_agent.adapters.adk_adapter: - agent-allow-small-payments (level=agent, priority=10, effect=allow) -> result=allow
+INFO:janus_agent.adapters.adk_adapter: - agent-deny-large-payments (level=agent, priority=10, effect=deny) -> result=not_applicable
+INFO:janus_agent.adapters.adk_adapter:
+INFO:janus_agent.adapters.adk_adapter:Extracted intent: {'action': 'payment.transfer', 'parameters': {'amount': 750.0, 'recipient': 'vendor', 'type': 'transfer'}, 'confidence': 0.98}
+INFO:janus_agent.adapters.adk_adapter:Policy decision: allow (policy: agent-allow-small-payments) -- action=payment.transfer, amount=750.0, recipient=vendor -- agent=payment-financial-assistant
+INFO:janus_agent.adapters.adk_adapter:Matched policy reasoning:
+INFO:janus_agent.adapters.adk_adapter: - domain-finance-team-limit (level=domain, priority=20, effect=require_approval) -> result=not_applicable
+INFO:janus_agent.adapters.adk_adapter: - enterprise-pii-protection (level=enterprise, priority=1, effect=deny) -> result=not_applicable
+INFO:janus_agent.adapters.adk_adapter: - agent-allow-small-payments (level=agent, priority=10, effect=allow) -> result=allow
+INFO:janus_agent.adapters.adk_adapter: - agent-deny-large-payments (level=agent, priority=10, effect=deny) -> result=not_applicable
+INFO:janus_agent.adapters.adk_adapter:
+INFO:janus_agent.adapters.adk_adapter:Policy decision: allow (policy: agent-allow-small-payments) -- action=payment.transfer, amount=750.0, recipient=vendor -- agent=payment-financial-assistant
+INFO:janus_agent.adapters.adk_adapter:Matched policy reasoning:
+INFO:janus_agent.adapters.adk_adapter: - domain-finance-team-limit (level=domain, priority=20, effect=require_approval) -> result=not_applicable
+INFO:janus_agent.adapters.adk_adapter: - enterprise-pii-protection (level=enterprise, priority=1, effect=deny) -> result=not_applicable
+INFO:janus_agent.adapters.adk_adapter: - agent-allow-small-payments (level=agent, priority=10, effect=allow) -> result=allow
+INFO:janus_agent.adapters.adk_adapter: - agent-deny-large-payments (level=agent, priority=10, effect=deny) -> result=not_applicable
+INFO:janus_agent.adapters.adk_adapter:
+INFO:janus_agent.adapters.adk_adapter:Extracted intent: {'action': 'payment.transfer', 'parameters': {'amount': 999.0, 'recipient': 'equipment', 'type': 'payment'}, 'confidence': 0.98}
+INFO:janus_agent.adapters.adk_adapter:Policy decision: allow (policy: agent-allow-small-payments) -- action=payment.transfer, amount=999.0, recipient=equipment -- agent=payment-financial-assistant
+INFO:janus_agent.adapters.adk_adapter:Matched policy reasoning:
+INFO:janus_agent.adapters.adk_adapter: - domain-finance-team-limit (level=domain, priority=20, effect=require_approval) -> result=not_applicable
+INFO:janus_agent.adapters.adk_adapter: - enterprise-pii-protection (level=enterprise, priority=1, effect=deny) -> result=not_applicable
+INFO:janus_agent.adapters.adk_adapter: - agent-allow-small-payments (level=agent, priority=10, effect=allow) -> result=allow
+INFO:janus_agent.adapters.adk_adapter: - agent-deny-large-payments (level=agent, priority=10, effect=deny) -> result=not_applicable
+INFO:janus_agent.adapters.adk_adapter:
+INFO:janus_agent.adapters.adk_adapter:Policy decision: allow (policy: agent-allow-small-payments) -- action=payment.transfer, amount=999.0, recipient=equipment -- agent=payment-financial-assistant
+INFO:janus_agent.adapters.adk_adapter:Matched policy reasoning:
+INFO:janus_agent.adapters.adk_adapter: - domain-finance-team-limit (level=domain, priority=20, effect=require_approval) -> result=not_applicable
+INFO:janus_agent.adapters.adk_adapter: - enterprise-pii-protection (level=enterprise, priority=1, effect=deny) -> result=not_applicable
+INFO:janus_agent.adapters.adk_adapter: - agent-allow-small-payments (level=agent, priority=10, effect=allow) -> result=allow
+INFO:janus_agent.adapters.adk_adapter: - agent-deny-large-payments (level=agent, priority=10, effect=deny) -> result=not_applicable
+INFO:janus_agent.adapters.adk_adapter:
+INFO:janus_agent.adapters.adk_adapter:Extracted intent: {'action': 'payment.transfer', 'parameters': {'amount': 1000.0, 'recipient': 'account', 'type': 'transfer'}, 'confidence': 0.98}
+INFO:janus_agent.adapters.adk_adapter:Policy decision: deny (policy: agent-deny-large-payments) -- action=payment.transfer, amount=1000.0, recipient=account -- agent=payment-financial-assistant
+INFO:janus_agent.adapters.adk_adapter:Matched policy reasoning:
+INFO:janus_agent.adapters.adk_adapter: - domain-finance-team-limit (level=domain, priority=20, effect=require_approval) -> result=not_applicable
+INFO:janus_agent.adapters.adk_adapter: - enterprise-pii-protection (level=enterprise, priority=1, effect=deny) -> result=not_applicable
+INFO:janus_agent.adapters.adk_adapter: - agent-allow-small-payments (level=agent, priority=10, effect=allow) -> result=not_applicable
+INFO:janus_agent.adapters.adk_adapter: - agent-deny-large-payments (level=agent, priority=10, effect=deny) -> result=deny
+INFO:janus_agent.adapters.adk_adapter:
+INFO:janus_agent.adapters.adk_adapter:Extracted intent: {'action': 'payment.transfer', 'parameters': {'amount': 5000.0, 'recipient': 'services', 'type': 'payment'}, 'confidence': 0.98}
+INFO:janus_agent.adapters.adk_adapter:Policy decision: deny (policy: agent-deny-large-payments) -- action=payment.transfer, amount=5000.0, recipient=services -- agent=payment-financial-assistant
+INFO:janus_agent.adapters.adk_adapter:Matched policy reasoning:
+INFO:janus_agent.adapters.adk_adapter: - domain-finance-team-limit (level=domain, priority=20, effect=require_approval) -> result=not_applicable
+INFO:janus_agent.adapters.adk_adapter: - enterprise-pii-protection (level=enterprise, priority=1, effect=deny) -> result=not_applicable
+INFO:janus_agent.adapters.adk_adapter: - agent-allow-small-payments (level=agent, priority=10, effect=allow) -> result=not_applicable
+INFO:janus_agent.adapters.adk_adapter: - agent-deny-large-payments (level=agent, priority=10, effect=deny) -> result=deny
+INFO:janus_agent.adapters.adk_adapter:
+INFO:janus_agent.core.policy_repository:Loaded 1 policies from domain-finance.yaml
+INFO:janus_agent.core.policy_repository:Loaded 1 policies from enterprise-security.yaml
+INFO:janus_agent.core.policy_repository:Loaded 2 policies from agent-payment-processor.yaml
+INFO:janus_agent.core.policy_repository:Loaded 4 policies from policies/examples
+INFO:janus_agent.adapters.adk_adapter:Initialized ADK Agent: payment-agent-1
+INFO:janus_agent.adapters.adk_adapter:Available tools: ['process_payment', 'check_balance', 'check_policy']
+INFO:janus_agent.core.policy_repository:Loaded 1 policies from domain-finance.yaml
+INFO:janus_agent.core.policy_repository:Loaded 1 policies from enterprise-security.yaml
+INFO:janus_agent.core.policy_repository:Loaded 2 policies from agent-payment-processor.yaml
+INFO:janus_agent.core.policy_repository:Loaded 4 policies from policies/examples
+INFO:janus_agent.adapters.adk_adapter:Extracted intent: {'action': 'payment.transfer', 'parameters': {'amount': 10000.0, 'recipient': 'supplier', 'type': 'transfer'}, 'confidence': 0.98}
+INFO:janus_agent.adapters.adk_adapter:Policy decision: deny (policy: agent-deny-large-payments) -- action=payment.transfer, amount=10000.0, recipient=supplier -- agent=payment-agent-1
+INFO:janus_agent.adapters.adk_adapter:Matched policy reasoning:
+INFO:janus_agent.adapters.adk_adapter: - domain-finance-team-limit (level=domain, priority=20, effect=require_approval) -> result=not_applicable
+INFO:janus_agent.adapters.adk_adapter: - enterprise-pii-protection (level=enterprise, priority=1, effect=deny) -> result=not_applicable
+INFO:janus_agent.adapters.adk_adapter: - agent-allow-small-payments (level=agent, priority=10, effect=allow) -> result=not_applicable
+INFO:janus_agent.adapters.adk_adapter: - agent-deny-large-payments (level=agent, priority=10, effect=deny) -> result=deny
+INFO:janus_agent.adapters.adk_adapter:
+INFO:janus_agent.core.policy_repository:Loaded 1 policies from domain-finance.yaml
+INFO:janus_agent.core.policy_repository:Loaded 1 policies from enterprise-security.yaml
+INFO:janus_agent.core.policy_repository:Loaded 2 policies from agent-payment-processor.yaml
+INFO:janus_agent.core.policy_repository:Loaded 4 policies from policies/examples
+INFO:janus_agent.adapters.adk_adapter:Initialized ADK Agent: test-agent
+INFO:janus_agent.adapters.adk_adapter:Available tools: ['process_payment', 'check_balance', 'check_policy']
+INFO:janus_agent.adapters.adk_adapter:Extracted intent: {'action': 'payment.transfer', 'parameters': {'amount': 100.0, 'recipient': 'petty cash', 'type': 'transfer'}, 'confidence': 0.98}
+INFO:janus_agent.adapters.adk_adapter:Policy decision: allow (policy: agent-allow-small-payments) -- action=payment.transfer, amount=100.0, recipient=petty cash -- agent=test-agent
+INFO:janus_agent.adapters.adk_adapter:Matched policy reasoning:
+INFO:janus_agent.adapters.adk_adapter: - domain-finance-team-limit (level=domain, priority=20, effect=require_approval) -> result=not_applicable
+INFO:janus_agent.adapters.adk_adapter: - enterprise-pii-protection (level=enterprise, priority=1, effect=deny) -> result=not_applicable
+INFO:janus_agent.adapters.adk_adapter: - agent-allow-small-payments (level=agent, priority=10, effect=allow) -> result=allow
+INFO:janus_agent.adapters.adk_adapter: - agent-deny-large-payments (level=agent, priority=10, effect=deny) -> result=not_applicable
+INFO:janus_agent.adapters.adk_adapter:
+INFO:janus_agent.adapters.adk_adapter:Policy decision: allow (policy: agent-allow-small-payments) -- action=payment.transfer, amount=100.0, recipient=petty cash -- agent=test-agent
+INFO:janus_agent.adapters.adk_adapter:Matched policy reasoning:
+INFO:janus_agent.adapters.adk_adapter: - domain-finance-team-limit (level=domain, priority=20, effect=require_approval) -> result=not_applicable
+INFO:janus_agent.adapters.adk_adapter: - enterprise-pii-protection (level=enterprise, priority=1, effect=deny) -> result=not_applicable
+INFO:janus_agent.adapters.adk_adapter: - agent-allow-small-payments (level=agent, priority=10, effect=allow) -> result=allow
+INFO:janus_agent.adapters.adk_adapter: - agent-deny-large-payments (level=agent, priority=10, effect=deny) -> result=not_applicable
+INFO:janus_agent.adapters.adk_adapter:
+INFO:janus_agent.adapters.adk_adapter:Extracted intent: {'action': 'payment.wire', 'parameters': {'amount': 100.0, 'recipient': 'bank account', 'type': 'wire'}, 'confidence': 0.98}
+INFO:janus_agent.adapters.adk_adapter:Policy decision: deny (policy: default-deny) -- action=payment.wire, amount=100.0, recipient=bank account -- agent=test-agent
+INFO:janus_agent.adapters.adk_adapter:Matched policy reasoning:
+INFO:janus_agent.adapters.adk_adapter: - domain-finance-team-limit (level=domain, priority=20, effect=require_approval) -> result=not_applicable
+INFO:janus_agent.adapters.adk_adapter: - enterprise-pii-protection (level=enterprise, priority=1, effect=deny) -> result=not_applicable
+INFO:janus_agent.adapters.adk_adapter: - agent-allow-small-payments (level=agent, priority=10, effect=allow) -> result=not_applicable
+INFO:janus_agent.adapters.adk_adapter: - agent-deny-large-payments (level=agent, priority=10, effect=deny) -> result=not_applicable
+INFO:janus_agent.adapters.adk_adapter:
+INFO:janus_agent.adapters.adk_adapter:Extracted intent: {'action': 'payment.transfer', 'parameters': {'amount': 999.0, 'recipient': None, 'type': 'transfer'}, 'confidence': 0.95}
+INFO:janus_agent.adapters.adk_adapter:Policy decision: allow (policy: agent-allow-small-payments) -- action=payment.transfer, amount=999.0, recipient=None -- agent=payment-financial-assistant
+INFO:janus_agent.adapters.adk_adapter:Matched policy reasoning:
+INFO:janus_agent.adapters.adk_adapter: - domain-finance-team-limit (level=domain, priority=20, effect=require_approval) -> result=not_applicable
+INFO:janus_agent.adapters.adk_adapter: - enterprise-pii-protection (level=enterprise, priority=1, effect=deny) -> result=not_applicable
+INFO:janus_agent.adapters.adk_adapter: - agent-allow-small-payments (level=agent, priority=10, effect=allow) -> result=allow
+INFO:janus_agent.adapters.adk_adapter: - agent-deny-large-payments (level=agent, priority=10, effect=deny) -> result=not_applicable
+INFO:janus_agent.adapters.adk_adapter:
+INFO:janus_agent.adapters.adk_adapter:Policy decision: allow (policy: agent-allow-small-payments) -- action=payment.transfer, amount=999.0, recipient=None -- agent=payment-financial-assistant
+INFO:janus_agent.adapters.adk_adapter:Matched policy reasoning:
+INFO:janus_agent.adapters.adk_adapter: - domain-finance-team-limit (level=domain, priority=20, effect=require_approval) -> result=not_applicable
+INFO:janus_agent.adapters.adk_adapter: - enterprise-pii-protection (level=enterprise, priority=1, effect=deny) -> result=not_applicable
+INFO:janus_agent.adapters.adk_adapter: - agent-allow-small-payments (level=agent, priority=10, effect=allow) -> result=allow
+INFO:janus_agent.adapters.adk_adapter: - agent-deny-large-payments (level=agent, priority=10, effect=deny) -> result=not_applicable
+INFO:janus_agent.adapters.adk_adapter:
+INFO:janus_agent.adapters.adk_adapter:Extracted intent: {'action': 'payment.transfer', 'parameters': {'amount': 1000.0, 'recipient': 'vendor', 'type': 'payment'}, 'confidence': 0.98}
+INFO:janus_agent.adapters.adk_adapter:Policy decision: deny (policy: agent-deny-large-payments) -- action=payment.transfer, amount=1000.0, recipient=vendor -- agent=payment-financial-assistant
+INFO:janus_agent.adapters.adk_adapter:Matched policy reasoning:
+INFO:janus_agent.adapters.adk_adapter: - domain-finance-team-limit (level=domain, priority=20, effect=require_approval) -> result=not_applicable
+INFO:janus_agent.adapters.adk_adapter: - enterprise-pii-protection (level=enterprise, priority=1, effect=deny) -> result=not_applicable
+INFO:janus_agent.adapters.adk_adapter: - agent-allow-small-payments (level=agent, priority=10, effect=allow) -> result=not_applicable
+INFO:janus_agent.adapters.adk_adapter: - agent-deny-large-payments (level=agent, priority=10, effect=deny) -> result=deny
+INFO:janus_agent.adapters.adk_adapter:
+INFO:janus_agent.adapters.adk_adapter:Extracted intent: {'action': 'payment.transfer', 'parameters': {'amount': 0.0, 'recipient': 'testing', 'type': 'payment'}, 'confidence': 0.98}
+INFO:janus_agent.adapters.adk_adapter:Policy decision: allow (policy: agent-allow-small-payments) -- action=payment.transfer, amount=0.0, recipient=testing -- agent=payment-financial-assistant
+INFO:janus_agent.adapters.adk_adapter:Matched policy reasoning:
+INFO:janus_agent.adapters.adk_adapter: - domain-finance-team-limit (level=domain, priority=20, effect=require_approval) -> result=not_applicable
+INFO:janus_agent.adapters.adk_adapter: - enterprise-pii-protection (level=enterprise, priority=1, effect=deny) -> result=not_applicable
+INFO:janus_agent.adapters.adk_adapter: - agent-allow-small-payments (level=agent, priority=10, effect=allow) -> result=allow
+INFO:janus_agent.adapters.adk_adapter: - agent-deny-large-payments (level=agent, priority=10, effect=deny) -> result=not_applicable
+INFO:janus_agent.adapters.adk_adapter:
+INFO:janus_agent.adapters.adk_adapter:Policy decision: allow (policy: agent-allow-small-payments) -- action=payment.transfer, amount=0.0, recipient=testing -- agent=payment-financial-assistant
+INFO:janus_agent.adapters.adk_adapter:Matched policy reasoning:
+INFO:janus_agent.adapters.adk_adapter: - domain-finance-team-limit (level=domain, priority=20, effect=require_approval) -> result=not_applicable
+INFO:janus_agent.adapters.adk_adapter: - enterprise-pii-protection (level=enterprise, priority=1, effect=deny) -> result=not_applicable
+INFO:janus_agent.adapters.adk_adapter: - agent-allow-small-payments (level=agent, priority=10, effect=allow) -> result=allow
+INFO:janus_agent.adapters.adk_adapter: - agent-deny-large-payments (level=agent, priority=10, effect=deny) -> result=not_applicable
+INFO:janus_agent.adapters.adk_adapter:
+INFO:janus_agent.adapters.adk_adapter:Extracted intent: {'action': 'payment.transfer', 'parameters': {'amount': 5000.0, 'recipient': 'reserve', 'type': 'transfer'}, 'confidence': 0.98}
+INFO:janus_agent.adapters.adk_adapter:Policy decision: deny (policy: agent-deny-large-payments) -- action=payment.transfer, amount=5000.0, recipient=reserve -- agent=payment-financial-assistant
+INFO:janus_agent.adapters.adk_adapter:Matched policy reasoning:
+INFO:janus_agent.adapters.adk_adapter: - domain-finance-team-limit (level=domain, priority=20, effect=require_approval) -> result=not_applicable
+INFO:janus_agent.adapters.adk_adapter: - enterprise-pii-protection (level=enterprise, priority=1, effect=deny) -> result=not_applicable
+INFO:janus_agent.adapters.adk_adapter: - agent-allow-small-payments (level=agent, priority=10, effect=allow) -> result=not_applicable
+INFO:janus_agent.adapters.adk_adapter: - agent-deny-large-payments (level=agent, priority=10, effect=deny) -> result=deny
+INFO:janus_agent.adapters.adk_adapter:
+INFO:janus_agent.adapters.adk_adapter:Extracted intent: {'action': 'payment.transfer', 'parameters': {'amount': 1000000.0, 'recipient': None, 'type': 'payment'}, 'confidence': 0.9}
+INFO:janus_agent.adapters.adk_adapter:Policy decision: deny (policy: agent-deny-large-payments) -- action=payment.transfer, amount=1000000.0, recipient=None -- agent=payment-financial-assistant
+INFO:janus_agent.adapters.adk_adapter:Matched policy reasoning:
+INFO:janus_agent.adapters.adk_adapter: - domain-finance-team-limit (level=domain, priority=20, effect=require_approval) -> result=not_applicable
+INFO:janus_agent.adapters.adk_adapter: - enterprise-pii-protection (level=enterprise, priority=1, effect=deny) -> result=not_applicable
+INFO:janus_agent.adapters.adk_adapter: - agent-allow-small-payments (level=agent, priority=10, effect=allow) -> result=not_applicable
+INFO:janus_agent.adapters.adk_adapter: - agent-deny-large-payments (level=agent, priority=10, effect=deny) -> result=deny
+INFO:janus_agent.adapters.adk_adapter:
+INFO:janus_agent.adapters.adk_adapter:Extracted intent: {'action': 'payment.transfer', 'parameters': {'amount': 600.0, 'recipient': None, 'type': 'transfer'}, 'confidence': 0.9}
+INFO:janus_agent.adapters.adk_adapter:Policy decision: allow (policy: agent-allow-small-payments) -- action=payment.transfer, amount=600.0, recipient=None -- agent=payment-financial-assistant
+INFO:janus_agent.adapters.adk_adapter:Matched policy reasoning:
+INFO:janus_agent.adapters.adk_adapter: - domain-finance-team-limit (level=domain, priority=20, effect=require_approval) -> result=not_applicable
+INFO:janus_agent.adapters.adk_adapter: - enterprise-pii-protection (level=enterprise, priority=1, effect=deny) -> result=not_applicable
+INFO:janus_agent.adapters.adk_adapter: - agent-allow-small-payments (level=agent, priority=10, effect=allow) -> result=allow
+INFO:janus_agent.adapters.adk_adapter: - agent-deny-large-payments (level=agent, priority=10, effect=deny) -> result=not_applicable
+INFO:janus_agent.adapters.adk_adapter:
+INFO:janus_agent.adapters.adk_adapter:Policy decision: allow (policy: agent-allow-small-payments) -- action=payment.transfer, amount=600.0, recipient=None -- agent=payment-financial-assistant
+INFO:janus_agent.adapters.adk_adapter:Matched policy reasoning:
+INFO:janus_agent.adapters.adk_adapter: - domain-finance-team-limit (level=domain, priority=20, effect=require_approval) -> result=not_applicable
+INFO:janus_agent.adapters.adk_adapter: - enterprise-pii-protection (level=enterprise, priority=1, effect=deny) -> result=not_applicable
+INFO:janus_agent.adapters.adk_adapter: - agent-allow-small-payments (level=agent, priority=10, effect=allow) -> result=allow
+INFO:janus_agent.adapters.adk_adapter: - agent-deny-large-payments (level=agent, priority=10, effect=deny) -> result=not_applicable
+INFO:janus_agent.adapters.adk_adapter:
+INFO:janus_agent.adapters.adk_adapter:Extracted intent: {'action': 'payment.transfer', 'parameters': {'amount': 50.0, 'recipient': 'office supplies', 'type': 'payment'}, 'confidence': 0.98}
+INFO:janus_agent.adapters.adk_adapter:Policy decision: allow (policy: agent-allow-small-payments) -- action=payment.transfer, amount=50.0, recipient=office supplies -- agent=payment-financial-assistant
+INFO:janus_agent.adapters.adk_adapter:Matched policy reasoning:
+INFO:janus_agent.adapters.adk_adapter: - domain-finance-team-limit (level=domain, priority=20, effect=require_approval) -> result=not_applicable
+INFO:janus_agent.adapters.adk_adapter: - enterprise-pii-protection (level=enterprise, priority=1, effect=deny) -> result=not_applicable
+INFO:janus_agent.adapters.adk_adapter: - agent-allow-small-payments (level=agent, priority=10, effect=allow) -> result=allow
+INFO:janus_agent.adapters.adk_adapter: - agent-deny-large-payments (level=agent, priority=10, effect=deny) -> result=not_applicable
+INFO:janus_agent.adapters.adk_adapter:
+INFO:janus_agent.adapters.adk_adapter:Policy decision: allow (policy: agent-allow-small-payments) -- action=payment.transfer, amount=50.0, recipient=office supplies -- agent=payment-financial-assistant
+INFO:janus_agent.adapters.adk_adapter:Matched policy reasoning:
+INFO:janus_agent.adapters.adk_adapter: - domain-finance-team-limit (level=domain, priority=20, effect=require_approval) -> result=not_applicable
+INFO:janus_agent.adapters.adk_adapter: - enterprise-pii-protection (level=enterprise, priority=1, effect=deny) -> result=not_applicable
+INFO:janus_agent.adapters.adk_adapter: - agent-allow-small-payments (level=agent, priority=10, effect=allow) -> result=allow
+INFO:janus_agent.adapters.adk_adapter: - agent-deny-large-payments (level=agent, priority=10, effect=deny) -> result=not_applicable
+INFO:janus_agent.adapters.adk_adapter:
+INFO:janus_agent.adapters.adk_adapter:Extracted intent: {'action': 'payment.transfer', 'parameters': {'amount': 10000.0, 'recipient': 'our contractor', 'type': 'payment'}, 'confidence': 0.98}
+INFO:janus_agent.adapters.adk_adapter:Policy decision: deny (policy: agent-deny-large-payments) -- action=payment.transfer, amount=10000.0, recipient=our contractor -- agent=payment-financial-assistant
+INFO:janus_agent.adapters.adk_adapter:Matched policy reasoning:
+INFO:janus_agent.adapters.adk_adapter: - domain-finance-team-limit (level=domain, priority=20, effect=require_approval) -> result=not_applicable
+INFO:janus_agent.adapters.adk_adapter: - enterprise-pii-protection (level=enterprise, priority=1, effect=deny) -> result=not_applicable
+INFO:janus_agent.adapters.adk_adapter: - agent-allow-small-payments (level=agent, priority=10, effect=allow) -> result=not_applicable
+INFO:janus_agent.adapters.adk_adapter: - agent-deny-large-payments (level=agent, priority=10, effect=deny) -> result=deny
+INFO:janus_agent.adapters.adk_adapter:
+INFO:janus_agent.adapters.adk_adapter:Extracted intent: {'action': 'payment.wire', 'parameters': {'amount': 500.0, 'recipient': 'our European office', 'type': 'wire'}, 'confidence': 0.98}
+INFO:janus_agent.adapters.adk_adapter:Policy decision: deny (policy: default-deny) -- action=payment.wire, amount=500.0, recipient=our European office -- agent=payment-financial-assistant
+INFO:janus_agent.adapters.adk_adapter:Matched policy reasoning:
+INFO:janus_agent.adapters.adk_adapter: - domain-finance-team-limit (level=domain, priority=20, effect=require_approval) -> result=not_applicable
+INFO:janus_agent.adapters.adk_adapter: - enterprise-pii-protection (level=enterprise, priority=1, effect=deny) -> result=not_applicable
+INFO:janus_agent.adapters.adk_adapter: - agent-allow-small-payments (level=agent, priority=10, effect=allow) -> result=not_applicable
+INFO:janus_agent.adapters.adk_adapter: - agent-deny-large-payments (level=agent, priority=10, effect=deny) -> result=not_applicable
+INFO:janus_agent.adapters.adk_adapter:
+INFO:janus_agent.adapters.adk_adapter:Extracted intent: {'action': 'payment.transfer', 'parameters': {'amount': 2500.0, 'type': 'payment'}, 'confidence': 0.98}
+INFO:janus_agent.adapters.adk_adapter:Policy decision: deny (policy: agent-deny-large-payments) -- action=payment.transfer, amount=2500.0, recipient=None -- agent=payment-financial-assistant
+INFO:janus_agent.adapters.adk_adapter:Matched policy reasoning:
+INFO:janus_agent.adapters.adk_adapter: - domain-finance-team-limit (level=domain, priority=20, effect=require_approval) -> result=not_applicable
+INFO:janus_agent.adapters.adk_adapter: - enterprise-pii-protection (level=enterprise, priority=1, effect=deny) -> result=not_applicable
+INFO:janus_agent.adapters.adk_adapter: - agent-allow-small-payments (level=agent, priority=10, effect=allow) -> result=not_applicable
+INFO:janus_agent.adapters.adk_adapter: - agent-deny-large-payments (level=agent, priority=10, effect=deny) -> result=deny
+INFO:janus_agent.adapters.adk_adapter:
+INFO:janus_agent.core.policy_repository:Loaded 1 policies from domain-finance.yaml
+INFO:janus_agent.core.policy_repository:Loaded 1 policies from enterprise-security.yaml
+INFO:janus_agent.core.policy_repository:Loaded 2 policies from agent-payment-processor.yaml
+INFO:janus_agent.core.policy_repository:Loaded 4 policies from policies/examples
+INFO:janus_agent.adapters.adk_adapter:Initialized ADK Agent: junior-payment-agent
+INFO:janus_agent.adapters.adk_adapter:Available tools: ['process_payment', 'check_balance', 'check_policy']
+INFO:janus_agent.adapters.adk_adapter:Initialized ADK Agent: senior-payment-agent
+INFO:janus_agent.adapters.adk_adapter:Available tools: ['process_payment', 'check_balance', 'check_policy']
+INFO:janus_agent.adapters.adk_adapter:Initialized ADK Agent: finance-manager-1
+INFO:janus_agent.adapters.adk_adapter:Available tools: ['process_payment', 'check_balance', 'check_policy']
+INFO:janus_agent.adapters.adk_adapter:Initialized ADK Agent: audit-agent-1
+INFO:janus_agent.adapters.adk_adapter:Available tools: ['process_payment', 'check_balance', 'check_policy']
+INFO:janus_agent.adapters.adk_adapter:Extracted intent: {'action': 'payment.transfer', 'parameters': {'amount': 5000.0, 'recipient': 'contractor', 'type': 'payment'}, 'confidence': 0.98}
+INFO:janus_agent.adapters.adk_adapter:Policy decision: deny (policy: default-deny) -- action=payment.transfer, amount=5000.0, recipient=contractor -- agent=junior-payment-agent
+INFO:janus_agent.adapters.adk_adapter:Matched policy reasoning:
+INFO:janus_agent.adapters.adk_adapter: - domain-finance-team-limit (level=domain, priority=20, effect=require_approval) -> result=not_applicable
+INFO:janus_agent.adapters.adk_adapter: - enterprise-pii-protection (level=enterprise, priority=1, effect=deny) -> result=not_applicable
+INFO:janus_agent.adapters.adk_adapter: - agent-allow-small-payments (level=agent, priority=10, effect=allow) -> result=not_applicable
+INFO:janus_agent.adapters.adk_adapter: - agent-deny-large-payments (level=agent, priority=10, effect=deny) -> result=not_applicable
+INFO:janus_agent.adapters.adk_adapter:
+INFO:janus_agent.adapters.adk_adapter:Extracted intent: {'action': 'payment.transfer', 'parameters': {'amount': 5000.0, 'recipient': 'contractor', 'type': 'payment'}, 'confidence': 0.98}
+INFO:janus_agent.adapters.adk_adapter:Policy decision: deny (policy: default-deny) -- action=payment.transfer, amount=5000.0, recipient=contractor -- agent=senior-payment-agent
+INFO:janus_agent.adapters.adk_adapter:Matched policy reasoning:
+INFO:janus_agent.adapters.adk_adapter: - domain-finance-team-limit (level=domain, priority=20, effect=require_approval) -> result=not_applicable
+INFO:janus_agent.adapters.adk_adapter: - enterprise-pii-protection (level=enterprise, priority=1, effect=deny) -> result=not_applicable
+INFO:janus_agent.adapters.adk_adapter: - agent-allow-small-payments (level=agent, priority=10, effect=allow) -> result=not_applicable
+INFO:janus_agent.adapters.adk_adapter: - agent-deny-large-payments (level=agent, priority=10, effect=deny) -> result=not_applicable
+INFO:janus_agent.adapters.adk_adapter:
+INFO:janus_agent.adapters.adk_adapter:Extracted intent: {'action': 'payment.transfer', 'parameters': {'amount': 5000.0, 'recipient': 'contractor', 'type': 'payment'}, 'confidence': 0.98}
+INFO:janus_agent.adapters.adk_adapter:Policy decision: deny (policy: default-deny) -- action=payment.transfer, amount=5000.0, recipient=contractor -- agent=finance-manager-1
+INFO:janus_agent.adapters.adk_adapter:Matched policy reasoning:
+INFO:janus_agent.adapters.adk_adapter: - domain-finance-team-limit (level=domain, priority=20, effect=require_approval) -> result=not_applicable
+INFO:janus_agent.adapters.adk_adapter: - enterprise-pii-protection (level=enterprise, priority=1, effect=deny) -> result=not_applicable
+INFO:janus_agent.adapters.adk_adapter: - agent-allow-small-payments (level=agent, priority=10, effect=allow) -> result=not_applicable
+INFO:janus_agent.adapters.adk_adapter: - agent-deny-large-payments (level=agent, priority=10, effect=deny) -> result=not_applicable
+INFO:janus_agent.adapters.adk_adapter:
+
+🔍 Checking environment...
+✅ Found API key: AIzaSyAtdS...
+============================================================
+ JANUS + GOOGLE GEMINI INTEGRATION DEMO
+============================================================
+Initialized payment-financial-assistant: AI Financial Assistant powered by Gemini
+Loaded 4 policies
+✓ Initialized Gemini client with model: gemini-2.5-flash
+✓ Gemini integration enabled
+
+============================================================
+BASIC POLICY TESTS
+Agent-level payment policies
+============================================================
+
+Small payment: Pay $50 to office supplies
+   ✅ Correct: allow (policy: agent-allow-small-payments)
+   Gemini: Your payment of $50 to office supplies has been approved and will be processed. Your transaction ID ...
+
+Medium payment: Transfer $750 to vendor
+   ✅ Correct: allow (policy: agent-allow-small-payments)
+   Gemini: Your transfer of $750 to the vendor has been approved and will be processed. Your transaction ID is ...
+
+Edge case: Pay $999 for equipment
+   ✅ Correct: allow (policy: agent-allow-small-payments)
+   Gemini: Your payment of $999 for equipment has been approved and will be processed. Your transaction ID is T...
+
+Threshold: Transfer $1000 to account
+   ✅ Correct: deny (policy: agent-deny-large-payments)
+   Gemini: I'm unable to process a transfer of $1000 directly as this amount exceeds the limit for automated tr...
+
+Large payment: Pay $5000 for services
+   ✅ Correct: deny (policy: agent-deny-large-payments)
+   Gemini: I'm unable to process a payment of $5000 at this time. Our policy limits the maximum amount that can...
+
+📊 Basic Tests: 5/5 passed
+
+============================================================
+HIERARCHY TESTS
+Domain + Agent policy interaction
+============================================================
+
+1️⃣  Subject-Specific Domain Policies
+----------------------------------------
+
+Testing different agent types with $10,000 transfer:
+Initialized payment-agent-1: Payment processor
+Loaded 4 policies
+✓ Initialized Gemini client with model: gemini-2.5-flash
+✓ Gemini integration enabled
+Initialized finance-agent-1: Finance team
+Loaded 4 policies
+Regular agent (payment-*): deny - agent-deny-large-payments
+Finance agent (finance-*): require_approval - domain-finance-team-limit
+
+💡 Domain policies can target specific agent patterns!
+
+2️⃣  Action-Specific Policies
+----------------------------------------
+Initialized test-agent: Test
+Loaded 4 policies
+✓ Initialized Gemini client with model: gemini-2.5-flash
+✓ Gemini integration enabled
+Regular transfer: allow
+Wire transfer: deny
+
+💡 Different actions can trigger different policies!
+
+3️⃣  Policy Precedence
+----------------------------------------
+
+    Policy Evaluation Order:
+    ┌─────────────────┐
+    │   ENTERPRISE    │ ← Highest priority
+    ├─────────────────┤
+    │     DOMAIN      │ ← Department rules
+    ├─────────────────┤
+    │     AGENT       │ ← Service rules
+    └─────────────────┘
+    
+
+============================================================
+EDGE CASE TESTS
+How Gemini + Policies handle special scenarios
+============================================================
+
+User: Transfer exactly $999 dollars
+   Gemini extracted: amount=$999.0
+   Policy decision: allow
+   Response: Your transfer of $999 is being processed. Your transaction ID is TXN-536656....
+
+User: Send one thousand dollars to vendor
+   Gemini extracted: amount=$1000.0
+   Policy decision: deny
+   Response: I'm unable to process a payment of $1,000 to the vendor directly. This amount exceeds the current li...
+
+User: Pay 0 dollars for testing
+   Gemini extracted: amount=$0.0
+   Policy decision: allow
+   Response: Your payment of $0.0 to testing has been approved and will be processed. Your transaction ID is TXN-...
+
+User: I need to transfer five thousand to reserve
+   Gemini extracted: amount=$5000.0
+   Policy decision: deny
+   Response: I'm unable to process a direct transfer of five thousand at this time due to our large payment polic...
+
+User: Can you process a million dollar payment?
+   Gemini extracted: amount=$1000000.0
+   Policy decision: deny
+   Response: Unfortunately, I cannot process a payment of one million dollars directly through this service, as i...
+
+User: Transfer five hundred... actually make it six hundred
+   Gemini extracted: amount=$600.0
+   Policy decision: allow
+   Response: Your transfer of $600 has been approved and will be processed....
+
+💡 Gemini handles natural language amounts!
+
+============================================================
+ Natural Language Processing Tests
+============================================================
+
+Testing Gemini's natural language understanding:
+
+User: I need to pay fifty dollars for office supplies
+Gemini: Your payment of $50 for office supplies has been approved and will be processed. Your transaction ID is TXN-014023....
+Policy: allow (agent-allow-small-payments)
+
+User: Can you send ten grand to our contractor?
+Gemini: I cannot process a direct payment of ten thousand dollars to your contractor. Our policy restricts direct transfers of this size. For large payments, ...
+Policy: deny (agent-deny-large-payments)
+
+User: Wire five hundred euros to our European office
+Gemini: I am unable to process this wire transfer as there is no matching policy in our system for this type of transaction. Please consult with the finance d...
+Policy: deny (default-deny)
+
+User: Process a payment of two thousand five hundred dollars
+Gemini: I'm unable to process a payment of $2,500 directly through this system, as this amount exceeds our policy limit for automated payments. For payments o...
+Policy: deny (agent-deny-large-payments)
+
+
+============================================================
+ ADK ORCHESTRATOR WITH HIERARCHY
+============================================================
+✓ Initialized Gemini client with model: gemini-2.5-flash
+Created: junior-payment-agent - Junior staff - strict limits
+Created: senior-payment-agent - Senior staff - higher limits
+Created: finance-manager-1 - Finance manager - department rules
+Created: audit-agent-1 - Audit team - monitoring only
+
+Testing: '$5,000 payment to contractor' with different agents:
+
+Agent: junior-payment-agent
+Response: I cannot process the $5,000 payment to the contractor as no matching policies were found. Please verify the contractor's setup in our system or provide additional details like a vendor ID or invoice number. You may also need to consult internal guidelines for contractor payments.
+
+Agent: senior-payment-agent
+Response: I'm unable to process the $5,000 payment to the contractor. The system indicates 'No matching policies' for this transaction. Please check your account's payment policies or provide more details for processing.
+
+Agent: finance-manager-1
+Response: I am unable to process your request for a $5,000 payment to the contractor at this time. Our system indicates 'No matching policies' for this transaction type.
+
+Please ensure the contractor is properly set up in the system, or contact your finance department for assistance with manual processing or policy clarification.
+
+
+Start interactive chat? (y/n): 
+✅ Demo complete!
+
+📊 Summary:
+  • Basic policies ✓
+  • Hierarchy tests ✓
+  • Edge cases ✓
+  • Natural language ✓
+  • Multi-agent orchestration ✓

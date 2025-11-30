@@ -15,7 +15,7 @@ policies:
     description: "Deny payments $1000 or more"
     level: "agent"
     action: "payment.transfer"
-    subject: "*"
+    subject: "payment-*"
     resource: "*"
     effect: "deny"
     match:
