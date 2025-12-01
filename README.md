@@ -143,6 +143,16 @@ Sample demo analysis can be found here: [DEMO Analysis](demo_analysis.md)
 
 ## 📖 Documentation
 
+| Document | Description |
+|----------|-------------|
+| [Overview](https://github.com/Ortimus/janus-adk/blob/main/docs/overview.md) | High-level system overview |
+| [Introduction](https://github.com/Ortimus/janus-adk/blob/main/docs/01_introduction.md) | Getting started with Janus |
+| [Janus Agent](https://github.com/Ortimus/janus-adk/blob/main/docs/01_janus_agent_.md) | Core agent architecture and usage |
+| [Policy Decision Point (PDP)](https://github.com/Ortimus/janus-adk/blob/main/docs/02_policy_decision_point__pdp__.md) | Policy evaluation engine |
+| [Policy Repository](https://github.com/Ortimus/janus-adk/blob/main/docs/03_policy_repository_.md) | YAML policy storage and loading |
+| [Gemini Client](https://github.com/Ortimus/janus-adk/blob/main/docs/04_gemini_client_.md) | NLU/NLG processing and intent extraction |
+| [ADK Adapter & Orchestrator](https://github.com/Ortimus/janus-adk/blob/main/docs/05_adk_adapter__agent___orchestrator__.md) | Google ADK integration and multi-agent orchestration |
+
 - [Google Gemini API](https://ai.google.dev/docs)
 - [Google ADK](https://cloud.google.com/agent-development-kit)
 
