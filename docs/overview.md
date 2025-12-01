@@ -6,23 +6,36 @@ The **Janus ADK** project integrates *hierarchical policy management* into AI ag
 ## Visual Overview
 
 ```mermaid
+%%{init: {'theme': 'neutral'}}%%
 flowchart TD
-    A0["Policy Decision Point (PDP)
-"]
-    A1["Policy Repository
-"]
-    A2["Janus Agent
-"]
-    A3["Gemini Client
-"]
-    A4["ADK Adapter (Agent & Orchestrator)
-"]
-    A2 -- "Consults PDP" --> A0
+    subgraph core["🎯 Janus Core"]
+        A2["Janus Agent"]
+    end
+
+    subgraph llm["🤖 LLM Integration"]
+        A3["Gemini Client"]
+    end
+
+    subgraph policy["🛡️ Policy Engine"]
+        A0["Policy Decision Point (PDP)"]
+        A1["Policy Repository"]
+    end
+
+    subgraph adk["⚙️ ADK Layer"]
+        A4["ADK Adapter (Agent & Orchestrator)"]
+    end
+
+    A2 -- "Consults" --> A0
     A2 -- "Uses LLM via" --> A3
-    A2 -- "Manages ADK Agent" --> A4
+    A2 -- "Manages" --> A4
     A0 -- "Retrieves policies from" --> A1
-    A4 -- "Delegates policy evaluation to" --> A0
-    A4 -- "Communicates with LLM via" --> A3
+    A4 -- "Delegates policy evaluation" --> A0
+    A4 -- "Communicates via" --> A3
+
+    style core fill:#e8f4f8,stroke:#0369a1
+    style llm fill:#fef3c7,stroke:#d97706
+    style policy fill:#dcfce7,stroke:#16a34a
+    style adk fill:#f3e8ff,stroke:#9333ea
 ```
 
 ## Chapters
@@ -37,6 +50,8 @@ flowchart TD
 ](04_gemini_client_.md)
 5. [ADK Adapter (Agent & Orchestrator)
 ](05_adk_adapter__agent___orchestrator__.md)
+6. [Sample Analysis Report
+](06_demo_analysis_.md)
 
 ---
 

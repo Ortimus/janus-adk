@@ -71,6 +71,7 @@ flowchart TD
 | [Policy Repository](https://github.com/Ortimus/janus-adk/blob/main/docs/03_policy_repository_.md) | YAML policy storage and loading |
 | [Gemini Client](https://github.com/Ortimus/janus-adk/blob/main/docs/04_gemini_client_.md) | NLU/NLG processing and intent extraction |
 | [ADK Adapter & Orchestrator](https://github.com/Ortimus/janus-adk/blob/main/docs/05_adk_adapter__agent___orchestrator__.md) | Google ADK integration and multi-agent orchestration |
+| [Sample Analysis Report](https://github.com/Ortimus/janus-adk/blob/main/docs/06_demo_analysis_.md) | Sample analysis report of demo scripts|
 
 - [Google Gemini API](https://ai.google.dev/docs)
 - [Google ADK](https://cloud.google.com/agent-development-kit)
