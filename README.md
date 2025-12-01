@@ -8,6 +8,38 @@ It is intended to evolve into a clean, enterprise-ready baseline for future expa
 
 NOTE: This is a [submssion](kaggle.com/competitions/agents-intensive-capstone-project/writeups/hierarchical-policy-architecture) for the [Kaggle Agents Intensive Capstone project](https://www.kaggle.com/competitions/agents-intensive-capstone-project/overview). 
 
+```mermaid
+%%{init: {'theme': 'neutral'}}%%
+flowchart TD
+    subgraph core["🎯 Janus Core"]
+        A2["Janus Agent"]
+    end
+
+    subgraph llm["🤖 LLM Integration"]
+        A3["Gemini Client"]
+    end
+
+    subgraph policy["🛡️ Policy Engine"]
+        A0["Policy Decision Point (PDP)"]
+        A1["Policy Repository"]
+    end
+
+    subgraph adk["⚙️ ADK Layer"]
+        A4["ADK Adapter (Agent & Orchestrator)"]
+    end
+
+    A2 -- "Consults" --> A0
+    A2 -- "Uses LLM via" --> A3
+    A2 -- "Manages" --> A4
+    A0 -- "Retrieves policies from" --> A1
+    A4 -- "Delegates policy evaluation" --> A0
+    A4 -- "Communicates via" --> A3
+
+    style core fill:#e8f4f8,stroke:#0369a1
+    style llm fill:#fef3c7,stroke:#d97706
+    style policy fill:#dcfce7,stroke:#16a34a
+    style adk fill:#f3e8ff,stroke:#9333ea
+```
 
 ## 🎯 Features
 
@@ -28,6 +60,21 @@ NOTE: This is a [submssion](kaggle.com/competitions/agents-intensive-capstone-pr
 - ✅ Tool registration system
 - ✅ Multi-agent orchestration
 - ✅ Policy-controlled tool execution
+
+## 📖 Documentation
+
+| Document | Description |
+|----------|-------------|
+| [Overview](https://github.com/Ortimus/janus-adk/blob/main/docs/overview.md) | High-level system overview |
+| [Janus Agent](https://github.com/Ortimus/janus-adk/blob/main/docs/01_janus_agent_.md) | Core agent architecture and usage |
+| [Policy Decision Point (PDP)](https://github.com/Ortimus/janus-adk/blob/main/docs/02_policy_decision_point__pdp__.md) | Policy evaluation engine |
+| [Policy Repository](https://github.com/Ortimus/janus-adk/blob/main/docs/03_policy_repository_.md) | YAML policy storage and loading |
+| [Gemini Client](https://github.com/Ortimus/janus-adk/blob/main/docs/04_gemini_client_.md) | NLU/NLG processing and intent extraction |
+| [ADK Adapter & Orchestrator](https://github.com/Ortimus/janus-adk/blob/main/docs/05_adk_adapter__agent___orchestrator__.md) | Google ADK integration and multi-agent orchestration |
+
+- [Google Gemini API](https://ai.google.dev/docs)
+- [Google ADK](https://cloud.google.com/agent-development-kit)
+
 
 ## 📁 Project Structure
 
@@ -139,22 +186,8 @@ Get your API key from: https://makersuite.google.com/app/apikey
 python examples/adk_demo/main_demo.py
 ```
 
-Sample demo analysis can be found here: [DEMO Analysis](demo_analysis.md)
+**Sample demo analysis can be found here: [DEMO Analysis](demo_analysis.md)**
 
-## 📖 Documentation
-
-| Document | Description |
-|----------|-------------|
-| [Overview](https://github.com/Ortimus/janus-adk/blob/main/docs/overview.md) | High-level system overview |
-| [Introduction](https://github.com/Ortimus/janus-adk/blob/main/docs/01_introduction.md) | Getting started with Janus |
-| [Janus Agent](https://github.com/Ortimus/janus-adk/blob/main/docs/01_janus_agent_.md) | Core agent architecture and usage |
-| [Policy Decision Point (PDP)](https://github.com/Ortimus/janus-adk/blob/main/docs/02_policy_decision_point__pdp__.md) | Policy evaluation engine |
-| [Policy Repository](https://github.com/Ortimus/janus-adk/blob/main/docs/03_policy_repository_.md) | YAML policy storage and loading |
-| [Gemini Client](https://github.com/Ortimus/janus-adk/blob/main/docs/04_gemini_client_.md) | NLU/NLG processing and intent extraction |
-| [ADK Adapter & Orchestrator](https://github.com/Ortimus/janus-adk/blob/main/docs/05_adk_adapter__agent___orchestrator__.md) | Google ADK integration and multi-agent orchestration |
-
-- [Google Gemini API](https://ai.google.dev/docs)
-- [Google ADK](https://cloud.google.com/agent-development-kit)
 
 ## 🎓 Capstone Project
 

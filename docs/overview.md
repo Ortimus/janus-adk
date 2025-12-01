@@ -1,4 +1,4 @@
-#janus-adk
+## JANUS ADK 
 
 The **Janus ADK** project integrates *hierarchical policy management* into AI agents, allowing them to validate actions against configurable rules. It uses a **Policy Decision Point (PDP)** to enforce these policies, while **Google Gemini** provides natural language understanding and intelligent responses for user interactions. The system also features an **ADK Adapter** for *multi-agent orchestration* and standardized tool execution within the Google Agent Development Kit framework, ensuring secure and auditable AI operations.
 
