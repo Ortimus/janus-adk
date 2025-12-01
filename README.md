@@ -139,6 +139,8 @@ Get your API key from: https://makersuite.google.com/app/apikey
 python examples/adk_demo/main_demo.py
 ```
 
+Sample demo analysis can be found here: [DEMO Analysis](demo_analysis.md)
+
 ## 📖 Documentation
 
 - [Google Gemini API](https://ai.google.dev/docs)
