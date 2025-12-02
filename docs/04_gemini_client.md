@@ -265,11 +265,11 @@ Similar to `extract_intent`, `generate_response` also uses a `prompt`. This time
 
 ### Conclusion
 
-The Gemini Client is the `janus-adk` system's vital connection to the world of human language. It empowers the [Janus Agent](01_janus_agent_.md) to understand complex user requests by extracting key intentions and details, and to communicate back with natural, context-aware responses. By acting as the intelligent interpreter, it makes the entire system user-friendly and highly effective.
+The Gemini Client is the `janus-adk` system's vital connection to the world of human language. It empowers the [Janus Agent](01_janus_agent.md) to understand complex user requests by extracting key intentions and details, and to communicate back with natural, context-aware responses. By acting as the intelligent interpreter, it makes the entire system user-friendly and highly effective.
 
 Now that we've covered the smart brain that understands and speaks, we'll look at how all these components come together and interact within the broader Google Agent Development Kit (ADK) ecosystem.
 
-[Next Chapter: ADK Adapter (Agent & Orchestrator)](05_adk_adapter__agent___orchestrator__.md)
+[Next Chapter: ADK Adapter (Agent & Orchestrator)](05_adk_adapter_agent_orchestrator.md)
 
 ---
 

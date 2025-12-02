@@ -208,11 +208,11 @@ This `run` method clearly shows the two main steps: using `self.gemini` to under
 
 ### Conclusion
 
-The `JanusAgent` is your primary interaction point with the `janus-adk` system. It's designed to be smart by understanding natural language requests through Gemini, and safe by enforcing predefined rules through the [Policy Decision Point (PDP)](02_policy_point__pdp__.md). It acts as the central brain that orchestrates language understanding and policy enforcement.
+The `JanusAgent` is your primary interaction point with the `janus-adk` system. It's designed to be smart by understanding natural language requests through Gemini, and safe by enforcing predefined rules through the [Policy Decision Point (PDP)](02_policy_point_pdp.md). It acts as the central brain that orchestrates language understanding and policy enforcement.
 
-In the next chapter, we'll dive deeper into the "bouncer" itself: the [Policy Decision Point (PDP)](02_policy_decision_point__pdp__.md), and understand how it makes those crucial allow/deny decisions.
+In the next chapter, we'll dive deeper into the "bouncer" itself: the [Policy Decision Point (PDP)](02_policy_decision_point_pdp.md), and understand how it makes those crucial allow/deny decisions.
 
-[Next Chapter: Policy Decision Point (PDP)](02_policy_decision_point__pdp__.md)
+[Next Chapter: Policy Decision Point (PDP)](02_policy_decision_point_pdp.md)
 
 ---
 

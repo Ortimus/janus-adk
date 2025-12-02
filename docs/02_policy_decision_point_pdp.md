@@ -209,9 +209,9 @@ Here’s a breakdown of the key steps:
 
 The Policy Decision Point (PDP) is the heart of policy enforcement in `janus-adk`. It acts as the system's security guard, diligently evaluating every request against a rulebook to ensure that AI agents operate safely and within defined boundaries. By understanding who is doing what, to what, and under what conditions, the PDP makes crucial allow/deny/approve decisions that are both auditable and consistent.
 
-Now that we understand how the PDP makes decisions, in the next chapter, we'll dive into where these "rules" (policies) actually come from: the [Policy Repository](03_policy_repository_.md).
+Now that we understand how the PDP makes decisions, in the next chapter, we'll dive into where these "rules" (policies) actually come from: the [Policy Repository](03_policy_repository.md).
 
-[Next Chapter: Policy Repository](03_policy_repository_.md)
+[Next Chapter: Policy Repository](03_policy_repository.md)
 
 ---
 

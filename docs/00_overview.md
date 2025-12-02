@@ -41,17 +41,17 @@ flowchart TD
 ## Chapters
 
 1. [Janus Agent
-](01_janus_agent_.md)
+](01_janus_agent.md)
 2. [Policy Decision Point (PDP)
-](02_policy_decision_point__pdp__.md)
+](02_policy_decision_point_pdp.md)
 3. [Policy Repository
-](03_policy_repository_.md)
+](03_policy_repository.md)
 4. [Gemini Client
-](04_gemini_client_.md)
+](04_gemini_client.md)
 5. [ADK Adapter (Agent & Orchestrator)
-](05_adk_adapter__agent___orchestrator__.md)
+](05_adk_adapter_agent_orchestrator.md)
 6. [Sample Analysis Report
-](06_demo_analysis_.md)
+](06_demo_analysis.md)
 
 ---
 

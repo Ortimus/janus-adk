@@ -275,11 +275,11 @@ This is the heart of the storage. Each policy dictionary is stored in the `self.
 
 ### Conclusion
 
-The Policy Repository is the foundational component that ensures all security and operational rules for your AI agents are properly loaded, stored, and accessible. By using human-readable YAML files, it empowers administrators to easily define and update the system's behavior without requiring code changes. It acts as the trusted library of rules, providing the [Policy Decision Point (PDP)](02_policy_decision_point__pdp__.md) with the necessary information to make informed decisions.
+The Policy Repository is the foundational component that ensures all security and operational rules for your AI agents are properly loaded, stored, and accessible. By using human-readable YAML files, it empowers administrators to easily define and update the system's behavior without requiring code changes. It acts as the trusted library of rules, providing the [Policy Decision Point (PDP)](02_policy_decision_point_pdp.md) with the necessary information to make informed decisions.
 
-Now that we understand how policies are stored and retrieved, we'll move on to explore another crucial piece of the puzzle: the [Gemini Client](04_gemini_client_.md), which gives our agents their intelligence to understand natural language.
+Now that we understand how policies are stored and retrieved, we'll move on to explore another crucial piece of the puzzle: the [Gemini Client](04_gemini_client.md), which gives our agents their intelligence to understand natural language.
 
-[Next Chapter: Gemini Client](04_gemini_client_.md)
+[Next Chapter: Gemini Client](04_gemini_client.md)
 
 ---
 
