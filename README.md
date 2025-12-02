@@ -65,7 +65,7 @@ flowchart TD
 
 | Document | Description |
 |----------|-------------|
-| [Overview](https://github.com/Ortimus/janus-adk/blob/main/docs/overview.md) | High-level system overview |
+| [Overview](https://github.com/Ortimus/janus-adk/blob/main/docs/00_overview.md) | High-level system overview |
 | [Janus Agent](https://github.com/Ortimus/janus-adk/blob/main/docs/01_janus_agent_.md) | Core agent architecture and usage |
 | [Policy Decision Point (PDP)](https://github.com/Ortimus/janus-adk/blob/main/docs/02_policy_decision_point__pdp__.md) | Policy evaluation engine |
 | [Policy Repository](https://github.com/Ortimus/janus-adk/blob/main/docs/03_policy_repository_.md) | YAML policy storage and loading |
